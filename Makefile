@@ -10,7 +10,7 @@ PYTHON = python
 # Settings
 #
 
-IMPLS = bash c clojure coffee cpp cs erlang factor forth go haskell java \
+IMPLS = bash c clojure coffee cpp cs elixir erlang factor forth go haskell java \
 	julia js lua make mal ocaml matlab miniMAL nim perl php ps \
 	python r racket ruby rust scala swift vb guile
 
@@ -58,6 +58,7 @@ clojure_STEP_TO_PROG = clojure/src/$($(1)).clj
 coffee_STEP_TO_PROG =  coffee/$($(1)).coffee
 cpp_STEP_TO_PROG =     cpp/$($(1))
 cs_STEP_TO_PROG =      cs/$($(1)).exe
+elixir_STEP_TO_PROG =  elixir/lib/$($(1)).ex
 erlang_STEP_TO_PROG =  erlang/$($(1))
 factor_STEP_TO_PROG =  factor/src/$($(1))/$($(1)).factor
 forth_STEP_TO_PROG =   forth/$($(1)).fs
@@ -98,6 +99,7 @@ clojure_RUNSTEP = lein with-profile +$(1) trampoline run $(3)
 coffee_RUNSTEP =  coffee ../$(2) $(3)
 cpp_RUNSTEP =     ../$(2) $(3)
 cs_RUNSTEP =      mono ../$(2) --raw $(3)
+elixir_RUNSTEP =  elixir ../$(2) $(3)
 erlang_RUNSTEP =  ../$(2) $(3)
 factor_RUNSTEP =  factor ../$(2) $(3)
 forth_RUNSTEP =   gforth ../$(2) $(3)
